@@ -1,38 +1,25 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { projects } from '@/app/data/projects';
 import { AnimatedSection } from '@/app/components/AnimatedSection';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
-interface PageProps {
-  params: { slug: string };
-  searchParams: Record<string, string | string[] | undefined>;
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
-
-  if (!project) {
-    return {
-      title: 'Project Not Found',
-    };
-  }
-
-  return {
-    title: `${project.title} | Christopher Rodriguez`,
-    description: project.description,
+type Props = {
+  params: {
+    slug: string;
   };
-}
+};
 
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
+export const metadata: Metadata = {
+  title: 'Project Details | Christopher Rodriguez',
+  description: 'Detailed view of my project work and technical implementations.',
+};
 
-export default async function ProjectPage({ params }: PageProps) {
+export default function ProjectPage({ params }: Props) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
