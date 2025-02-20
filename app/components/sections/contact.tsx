@@ -16,6 +16,15 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
+type FormSpreeResponse = {
+  body: any;
+  response?: {
+    status: number;
+    ok: boolean;
+  };
+  errors?: Array<{ message: string }>;
+};
+
 function ContactContent() {
   const [formState, sendToFormSpree] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID!);
   const [formData, setFormData] = useState<ContactFormData>({
@@ -39,18 +48,16 @@ function ContactContent() {
       // Send to FormSpree
       await sendToFormSpree(validatedData);
 
-      if (formState.succeeded) {
-        toast.success('Message sent successfully!');
-        // Reset form
-        setFormData({ name: '', email: '', message: '' });
-      } else if (formState.errors) {
-        const errorMessage = typeof formState.errors === 'string'
-          ? formState.errors
-          : 'Failed to send message. Please try again later.';
-        toast.error(errorMessage);
-      } else {
-        toast.error('Failed to send message. Please try again later.');
-      }
+      // Use a small timeout to allow formState to update
+      setTimeout(() => {
+        if (formState.succeeded) {
+          toast.success('Message sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+        } else if (formState.errors) {
+          toast.error('Failed to send message. Please try again later.');
+          console.error('FormSpree errors:', formState.errors);
+        }
+      }, 100);
     } catch (error) {
       if (error instanceof z.ZodError) {
         // Display the first validation error
