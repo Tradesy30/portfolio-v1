@@ -2,46 +2,61 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Cpu,
-  Database,
-  Layout,
-  Server,
-  Terminal,
-} from "lucide-react";
+import Image from "next/image";
 import type { ReactElement } from "react";
 
 type FloatingIcon = {
-  icon: ReactElement;
+  icon: ReactElement | string;
   color: string;
+  isImage?: boolean;
 }
 
 const techIcons: FloatingIcon[] = [
   {
-    icon: <Code2 className="w-full h-full" />,
-    color: "text-sky-400/50"
+    icon: "/icons/nextjs.svg",
+    color: "text-white",
+    isImage: true
   },
   {
-    icon: <Layout className="w-full h-full" />,
-    color: "text-indigo-400/50"
+    icon: "/icons/typescript.svg",
+    color: "text-blue-400",
+    isImage: true
   },
   {
-    icon: <Database className="w-full h-full" />,
-    color: "text-emerald-400/50"
+    icon: "/icons/react.svg",
+    color: "text-sky-400",
+    isImage: true
   },
   {
-    icon: <Terminal className="w-full h-full" />,
-    color: "text-purple-400/50"
+    icon: "/icons/nodejs.svg",
+    color: "text-green-500",
+    isImage: true
   },
   {
-    icon: <Server className="w-full h-full" />,
-    color: "text-rose-400/50"
+    icon: "/icons/tailwind.svg",
+    color: "text-cyan-400",
+    isImage: true
   },
   {
-    icon: <Cpu className="w-full h-full" />,
-    color: "text-amber-400/50"
+    icon: "/icons/javascript.svg",
+    color: "text-yellow-400",
+    isImage: true
   },
+  {
+    icon: "/icons/mongodb.svg",
+    color: "text-green-500",
+    isImage: true
+  },
+  {
+    icon: "/icons/framer-motion.svg",
+    color: "text-purple-400",
+    isImage: true
+  },
+  {
+    icon: "/icons/git.svg",
+    color: "text-orange-500",
+    isImage: true
+  }
 ];
 
 interface FloatingIconsProps {
@@ -114,7 +129,17 @@ export function FloatingIcons({
               style={{ width: size, height: size }}
             >
               <div className={`w-full h-full ${icon.color}`}>
-                {icon.icon}
+                {icon.isImage ? (
+                  <Image
+                    src={icon.icon as string}
+                    alt="Tech stack icon"
+                    width={size * 0.7}
+                    height={size * 0.7}
+                    className="object-contain"
+                  />
+                ) : (
+                  icon.icon
+                )}
               </div>
             </div>
           </motion.div>
