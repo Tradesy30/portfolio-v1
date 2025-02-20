@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="bg-gray-950">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-32">
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Sparkles Effect */}
@@ -57,9 +57,9 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 py-8 sm:py-0">
           <AnimatedSection>
-            <h1 className="text-5xl sm:text-7xl font-bold">
+            <h1 className="text-4xl sm:text-7xl font-bold">
               <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
                 Christopher Rodriguez
               </span>
@@ -70,8 +70,8 @@ export default function Home() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <p className="mt-6 text-xl sm:text-2xl text-gray-300 leading-relaxed">
-              An aspiring frontend developer passionate about learning web development and creating user-friendly experiences. Currently focusing on React, Next.js, and modern web technologies.
+            <p className="mt-6 text-xl sm:text-2xl text-gray-300 font-bold leading-relaxed">
+              A frontend developer focused on building modern, accessible web applications. Specializing in React, Next.js, and cutting-edge web technologies to create intuitive user experiences.
             </p>
           </AnimatedSection>
 

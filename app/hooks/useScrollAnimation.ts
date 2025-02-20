@@ -13,7 +13,7 @@ export const useScrollAnimation = (
   options: ScrollAnimationOptions = {}
 ): [boolean, AnimationControls] => {
   const controls = useAnimation();
-  const { threshold = 0.2, once = true, amount = 0.5 } = options;
+  const { once = true, amount = 0.5 } = options;
 
   const isInView = useInView(ref, {
     amount,

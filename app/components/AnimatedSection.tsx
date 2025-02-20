@@ -12,7 +12,7 @@ interface AnimatedSectionProps {
 
 export function AnimatedSection({ children, className = '', delay = 0 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isInView, controls] = useScrollAnimation(ref, {
+  const [, controls] = useScrollAnimation(ref, {
     once: true,
     amount: 0.3,
   });

@@ -60,8 +60,8 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 - [ ] Introduce dark/light mode toggle
 - [ ] Ensure theme persistence across sessions
 - [ ] Customize color schemes for better branding
-- [ ] Add smooth scroll transitions
-- [ ] Implement scroll-triggered animations
+- [x] Add smooth scroll transitions
+- [x] Implement scroll-triggered animations
 - [ ] Design loading states & skeleton screens
 
 #### Content Enhancement

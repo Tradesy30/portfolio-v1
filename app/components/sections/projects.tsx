@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { AnimatedSection } from '../AnimatedSection';
 
 type Project = {
   id: number;
@@ -39,12 +39,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-950/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
+        <AnimatedSection>
           <h2 className="text-3xl font-bold text-center mb-8">
             <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
               Featured Projects
@@ -53,39 +48,40 @@ export default function Projects() {
 
           {/* Filter Tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <button
-              onClick={() => setSelectedTag(null)}
-              className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                selectedTag === null
-                  ? 'bg-sky-500 text-white'
-                  : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
-              }`}
-            >
-              All
-            </button>
-            {allTags.map((tag) => (
+            <AnimatedSection delay={0.1}>
               <button
-                key={tag}
-                onClick={() => setSelectedTag(tag)}
+                onClick={() => setSelectedTag(null)}
                 className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                  selectedTag === tag
+                  selectedTag === null
                     ? 'bg-sky-500 text-white'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
                 }`}
               >
-                {tag}
+                All
               </button>
+            </AnimatedSection>
+            {allTags.map((tag, index) => (
+              <AnimatedSection key={tag} delay={0.2 + index * 0.1}>
+                <button
+                  onClick={() => setSelectedTag(tag)}
+                  className={`px-4 py-2 rounded-full text-sm transition-colors ${
+                    selectedTag === tag
+                      ? 'bg-sky-500 text-white'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
+                  }`}
+                >
+                  {tag}
+                </button>
+              </AnimatedSection>
             ))}
           </div>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <motion.div
+            {filteredProjects.map((project, index) => (
+              <AnimatedSection
                 key={project.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
+                delay={0.4 + index * 0.1}
                 className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-sky-500/50 transition-colors"
               >
                 <div className="relative h-48 overflow-hidden">
@@ -129,10 +125,10 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </AnimatedSection>
             ))}
           </div>
-        </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   );
