@@ -21,8 +21,8 @@ const projects: Project[] = [
     description: 'A brief description of your first project and its key features.',
     image: '/image.png',
     tags: ['React', 'Next.js', 'TypeScript'],
-    link: 'https://project-one.com',
-    github: 'https://github.com/yourusername/project-one',
+    link: 'https://portfolio-v1-delta-five.vercel.app/',
+    github: 'https://github.com/Tradesy30/portfolio-v1?tab=readme-ov-file',
   },
   // Add more projects here
 ];
