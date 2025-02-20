@@ -16,15 +16,6 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-type FormSpreeResponse = {
-  body: any;
-  response?: {
-    status: number;
-    ok: boolean;
-  };
-  errors?: Array<{ message: string }>;
-};
-
 function ContactContent() {
   const [formState, sendToFormSpree] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID!);
   const [formData, setFormData] = useState<ContactFormData>({
@@ -54,7 +45,10 @@ function ContactContent() {
           toast.success('Message sent successfully!');
           setFormData({ name: '', email: '', message: '' });
         } else if (formState.errors) {
-          toast.error('Failed to send message. Please try again later.');
+          const errorMessage = formState.errors instanceof Error
+            ? formState.errors.message
+            : 'Failed to send message. Please try again later.';
+          toast.error(errorMessage);
           console.error('FormSpree errors:', formState.errors);
         }
       }, 100);
