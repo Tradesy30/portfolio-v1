@@ -2,16 +2,34 @@ import About from './components/sections/about';
 import Projects from './components/sections/projects';
 import Contact from './components/sections/contact';
 import MobileNav from './components/layout/mobile-nav';
+import { FloatingIcons } from './components/ui/floating-icons';
+import { HeroIcon } from './components/ui/hero-icon';
+import { Sparkles } from './components/ui/sparkles';
 
 export default function Home() {
   return (
     <main className="bg-gray-950">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20">
+        {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden">
+          {/* Sparkles Effect */}
+          <Sparkles
+            particleColor="#38bdf8"
+            particleDensity={50}
+            speed={0.8}
+            minSize={0.8}
+            maxSize={1.8}
+            particleGlow={true}
+          />
+          {/* Gradient Circles */}
           <div className="absolute -inset-[10px] opacity-50">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/30 rounded-full blur-3xl" />
             <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-sky-500/20 rounded-full blur-3xl" />
+          </div>
+          {/* Floating Icons Background */}
+          <div className="absolute inset-0">
+            <FloatingIcons count={8} speed={0.7} minSize={40} maxSize={60} />
           </div>
         </div>
 
@@ -63,6 +81,9 @@ export default function Home() {
             >
               Get in Touch
             </a>
+          </div>
+          <div className="mt-8 sm:mt-12">
+            <HeroIcon />
           </div>
         </div>
       </section>
