@@ -14,6 +14,23 @@ interface SparklesProps {
   particleGlow?: boolean;
 }
 
+// Utility function for debouncing with proper TypeScript types
+function debounce<T extends (...args: unknown[]) => void>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: NodeJS.Timeout;
+
+  return (...args: Parameters<T>) => {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 export function Sparkles({
   id = "sparkles",
   background = "transparent",
@@ -146,10 +163,13 @@ export function Sparkles({
     initParticles();
     animate(0);
 
-    const debouncedResize = debounce(() => {
-      resizeCanvas();
-      initParticles();
-    }, 250);
+    const debouncedResize = debounce(
+      () => {
+        resizeCanvas();
+        initParticles();
+      },
+      250
+    );
 
     window.addEventListener("resize", debouncedResize);
 
@@ -167,17 +187,4 @@ export function Sparkles({
       style={{ background }}
     />
   );
-}
-
-// Utility function for debouncing
-function debounce(func: Function, wait: number) {
-  let timeout: NodeJS.Timeout;
-  return function executedFunction(...args: any[]) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
 }
