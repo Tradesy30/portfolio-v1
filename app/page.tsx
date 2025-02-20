@@ -5,6 +5,7 @@ import MobileNav from './components/layout/mobile-nav';
 import { FloatingIcons } from './components/ui/floating-icons';
 import { HeroIcon } from './components/ui/hero-icon';
 import { Sparkles } from './components/ui/sparkles';
+import { AnimatedSection } from './components/AnimatedSection';
 
 export default function Home() {
   return (
@@ -57,58 +58,73 @@ export default function Home() {
         </nav>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-          <h1 className="text-5xl sm:text-7xl font-bold">
-            <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-              Christopher Rodriguez
-            </span>
-          </h1>
-          <p className="mt-2 text-lg sm:text-xl text-gray-400">
-            Greensboro, NC, USA
-          </p>
-          <p className="mt-6 text-xl sm:text-2xl text-gray-300 leading-relaxed">
-            An aspiring frontend developer passionate about learning web development and creating user-friendly experiences. Currently focusing on React, Next.js, and modern web technologies.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors flex items-center justify-center"
-            >
-              View My Projects
-            </a>
-            <a
-              href="/Christopher-Rodriguez-CV.pdf"
-              download
-              className="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors flex items-center justify-center gap-2 order-last sm:order-none"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="inline-block"
+          <AnimatedSection>
+            <h1 className="text-5xl sm:text-7xl font-bold">
+              <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
+                Christopher Rodriguez
+              </span>
+            </h1>
+            <p className="mt-2 text-lg sm:text-xl text-gray-400">
+              Greensboro, NC, USA
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <p className="mt-6 text-xl sm:text-2xl text-gray-300 leading-relaxed">
+              An aspiring frontend developer passionate about learning web development and creating user-friendly experiences. Currently focusing on React, Next.js, and modern web technologies.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.4}>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#projects"
+                className="px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors flex items-center justify-center"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Download Resume
-            </a>
-          </div>
-          <div className="mt-8 sm:mt-12">
+                View My Projects
+              </a>
+              <a
+                href="/Christopher-Rodriguez-CV.pdf"
+                download
+                className="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors flex items-center justify-center gap-2 order-last sm:order-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="inline-block"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download Resume
+              </a>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.6} className="mt-8 sm:mt-12">
             <HeroIcon />
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Other Sections */}
-      <About />
-      <Projects />
-      <Contact />
+      <AnimatedSection>
+        <About />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Projects />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Contact />
+      </AnimatedSection>
     </main>
   );
 }
