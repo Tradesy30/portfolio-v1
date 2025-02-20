@@ -2,31 +2,11 @@
 
 import { useState, Suspense } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { AnimatedSection } from '../AnimatedSection';
 import { ProjectsSkeleton } from '../skeletons/section-skeletons';
-
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  link: string;
-  github: string;
-};
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'portfolio',
-    description: 'A brief description of your first project and its key features.',
-    image: '/portfolio.png',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://portfolio-v1-delta-five.vercel.app/',
-    github: 'https://github.com/Tradesy30/portfolio-v1?tab=readme-ov-file',
-  },
-  // Add more projects here
-];
+import { projects } from '@/app/data/projects';
+import { ExternalLink, Github } from 'lucide-react';
 
 const allTags = Array.from(new Set(projects.flatMap(project => project.tags)));
 
@@ -84,45 +64,53 @@ function ProjectsContent() {
               delay={0.4 + index * 0.1}
               className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-sky-500/50 transition-colors"
             >
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 bg-gray-800 rounded-md text-xs text-sky-400"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sky-400 hover:text-sky-300 text-sm font-medium"
-                  >
-                    View Project →
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-300 text-sm font-medium"
-                  >
-                    GitHub →
-                  </a>
+              <div className="relative">
+                <Link href={`/projects/${project.slug}`} className="block">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.coverImage}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 bg-gray-800 rounded-md text-xs text-sky-400"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+                <div className="px-6 pb-6">
+                  <div className="flex gap-4">
+                    {project.link && (
+                      <button
+                        onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+                        className="inline-flex items-center text-sky-400 hover:text-sky-300 text-sm font-medium"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-1" />
+                        Live
+                      </button>
+                    )}
+                    {project.github && (
+                      <button
+                        onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
+                        className="inline-flex items-center text-gray-400 hover:text-gray-300 text-sm font-medium"
+                      >
+                        <Github className="w-4 h-4 mr-1" />
+                        Code
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </AnimatedSection>

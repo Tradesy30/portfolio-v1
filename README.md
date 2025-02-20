@@ -39,27 +39,18 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 
 ## Project Roadmap
 
-### �� High Priority
+### High Priority
 
 - [x] **Contact Form Integration**
   - [x] Integrate with FormSpree/EmailJS
   - [x] Implement form validation
   - [x] Display success/error notifications
 
-### �� Planned Features
-
-#### Blog Implementation
-
-- [ ] Add MDX support for blog posts
-- [ ] Create a categories and tags system
-- [ ] Develop a blog post listing page
-- [ ] Implement search functionality
+### Planned Features
 
 #### Theme & UI Enhancements
 
-- [ ] Introduce dark/light mode toggle
-- [ ] Ensure theme persistence across sessions
-- [ ] Customize color schemes for better branding
+- [x] Ensure theme persistence across sessions
 - [x] Add smooth scroll transitions
 - [x] Implement scroll-triggered animations
 - [x] Design loading states & skeleton screens
@@ -67,10 +58,7 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 #### Content Enhancement
 
 - [x] Provide a downloadable resume
-- [ ] Visualize skills with interactive charts or graphs
-- [ ] Develop detailed project pages
-- [ ] Incorporate a testimonials section
-- [ ] Integrate social media links and feeds
+- [x] Develop detailed project pages
 
 ## Contact
 

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "./components/smooth-scroll/SmoothScroll";
 import { ToasterProvider } from "./components/providers/ToasterProvider";
+import { ThemeProvider } from "./components/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,10 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <SmoothScroll>
-          {children}
-          <ToasterProvider />
-        </SmoothScroll>
+        <ThemeProvider>
+          <SmoothScroll>
+            {children}
+            <ToasterProvider />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );
