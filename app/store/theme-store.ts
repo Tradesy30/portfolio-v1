@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { persist, type StateStorage } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
 
 type Theme = 'light' | 'dark'
 
