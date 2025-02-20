@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { projects } from '@/app/data/projects';
 import { AnimatedSection } from '@/app/components/AnimatedSection';
+import { type Metadata } from 'next';
 
 export default function ProjectPage({
   params
 }: {
-  params: Record<string, string>
+  params: { slug: string }
 }) {
   const project = projects.find((p) => p.slug === params.slug);
 

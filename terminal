@@ -1,0 +1,2 @@
+pnpm update next typescript @types/react
+pnpm next clean
