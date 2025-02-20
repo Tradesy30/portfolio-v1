@@ -1,12 +1,11 @@
-'use client';
+'use client'
 
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
-import { projects } from '@/app/data/projects';
-import { AnimatedSection } from '@/app/components/AnimatedSection';
-import { type Metadata } from 'next';
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
+import { projects } from '@/app/data/projects'
+import { AnimatedSection } from '@/app/components/AnimatedSection'
 
 export default function ProjectPage({
   params
