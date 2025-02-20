@@ -10,7 +10,7 @@ import { AnimatedSection } from '@/app/components/AnimatedSection';
 export default function ProjectPage({
   params
 }: {
-  params: { slug: string }
+  params: Record<string, string>
 }) {
   const project = projects.find((p) => p.slug === params.slug);
 
