@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 const metadataBase = process.env.NODE_ENV === 'production'
-  ? new URL('https://your-production-domain.com')
+  ? new URL('https://portfolio-v1-delta-five.vercel.app/')
   : new URL('http://localhost:3000');
 
 export const metadata: Metadata = {
