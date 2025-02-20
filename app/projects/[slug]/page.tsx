@@ -6,17 +6,11 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { projects } from '@/app/data/projects';
 import { AnimatedSection } from '@/app/components/AnimatedSection';
-import type { Metadata } from 'next';
 
 type Props = {
   params: {
     slug: string;
   };
-};
-
-export const metadata: Metadata = {
-  title: 'Project Details | Christopher Rodriguez',
-  description: 'Detailed view of my project work and technical implementations.',
 };
 
 export default function ProjectPage({ params }: Props) {
