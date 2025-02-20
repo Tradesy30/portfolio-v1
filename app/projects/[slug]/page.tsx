@@ -6,12 +6,12 @@ import { projects } from '@/app/data/projects';
 import { AnimatedSection } from '@/app/components/AnimatedSection';
 import { Metadata } from 'next';
 
-type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+interface PageProps {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -32,7 +32,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: Props) {
+export default async function ProjectPage({ params }: PageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
