@@ -44,7 +44,7 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
           <h1 className="text-5xl sm:text-7xl font-bold">
             <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-              Hi, I'm Christopher Rodriguez
+              Hi, I&apos;m Christopher Rodriguez
             </span>
           </h1>
           <p className="mt-6 text-xl sm:text-2xl text-gray-300 leading-relaxed">

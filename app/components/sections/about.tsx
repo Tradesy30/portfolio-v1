@@ -37,12 +37,12 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                I'm a passionate Full-Stack Developer with expertise in modern web technologies.
-                My journey in software development started [your background]. I specialize in
+                I&apos;m a passionate Full-Stack Developer with expertise in modern web technologies.
+                My journey in software development started with a deep curiosity for building things. I specialize in
                 building scalable web applications using React, Next.js, and Node.js.
               </p>
               <p>
-                When I'm not coding, you can find me [your interests/hobbies]. I believe in
+                When I&apos;m not coding, you can find me exploring new technologies and contributing to open-source projects. I believe in
                 continuous learning and staying up-to-date with the latest technologies.
               </p>
               <div className="pt-6">
