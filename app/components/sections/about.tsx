@@ -19,13 +19,13 @@ export default function About() {
           </h2>
           <div className="space-y-4 text-gray-300">
             <p>
-              I'm embarking on an exciting journey into frontend development, driven by a passion for creating beautiful and functional web experiences.
-              My background in customer service has given me a strong foundation in understanding user needs and attention to detail, which I'm now
+              I&apos;m embarking on an exciting journey into frontend development, driven by a passion for creating beautiful and functional web experiences.
+              My background in customer service has given me a strong foundation in understanding user needs and attention to detail, which I&apos;m now
               applying to web development.
             </p>
             <p>
-              Currently, I'm dedicating my time to learning modern web development through hands-on projects and structured online courses.
-              I'm particularly excited about building responsive websites and learning how to create engaging user interfaces.
+              Currently, I&apos;m dedicating my time to learning modern web development through hands-on projects and structured online courses.
+              I&apos;m particularly excited about building responsive websites and learning how to create engaging user interfaces.
             </p>
             <div className="pt-6">
               <h3 className="text-xl font-semibold mb-4 text-white">Learning Journey</h3>
