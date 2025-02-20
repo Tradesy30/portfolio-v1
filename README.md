@@ -74,10 +74,10 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 
 #### Performance Improvements
 
-- [ ] Optimize images for faster load times
-- [ ] Implement component lazy loading
-- [ ] Optimize fonts and typography
-- [ ] Enhance Core Web Vitals performance
+- [x] Optimize images for faster load times
+- [x] Implement component lazy loading
+- [x] Optimize fonts and typography
+- [x] Enhance Core Web Vitals performance
 
 ## Contact
 

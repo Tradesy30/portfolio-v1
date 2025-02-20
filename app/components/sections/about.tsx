@@ -31,13 +31,13 @@ function AboutContent() {
         <h3 className="text-xl font-semibold mb-4 text-white">Learning Journey</h3>
         <div className="space-y-3">
           <div>
-            <h4 className="text-sky-400 font-medium mb-2">Currently Learning</h4>
+            <h4 className="text-sky-300 font-medium mb-2">Currently Learning</h4>
             <div className="flex flex-wrap gap-3">
               {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'].map((tech, index) => (
                 <AnimatedSection
                   key={tech}
                   delay={0.5 + index * 0.1}
-                  className="px-4 py-2 bg-gray-800/50 rounded-full text-sm text-sky-400 border border-sky-400/20"
+                  className="px-4 py-2 bg-gray-800/50 rounded-full text-sm text-sky-300 border border-sky-400/20"
                 >
                   {tech}
                 </AnimatedSection>

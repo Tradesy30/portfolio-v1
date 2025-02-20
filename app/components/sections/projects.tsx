@@ -53,7 +53,7 @@ function ProjectsContent() {
               onClick={() => setSelectedTag(null)}
               className={`px-4 py-2 rounded-full text-sm transition-colors ${
                 selectedTag === null
-                  ? 'bg-sky-500 text-white'
+                  ? 'bg-sky-700 text-white'
                   : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
               }`}
             >
@@ -66,7 +66,7 @@ function ProjectsContent() {
                 onClick={() => setSelectedTag(tag)}
                 className={`px-4 py-2 rounded-full text-sm transition-colors ${
                   selectedTag === tag
-                    ? 'bg-sky-500 text-white'
+                    ? 'bg-sky-700 text-white'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
                 }`}
               >
@@ -100,7 +100,7 @@ function ProjectsContent() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 bg-gray-800 rounded-md text-xs text-sky-400"
+                      className="px-2 py-1 bg-gray-800 rounded-md text-xs text-sky-300"
                     >
                       {tag}
                     </span>
@@ -111,7 +111,7 @@ function ProjectsContent() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sky-400 hover:text-sky-300 text-sm font-medium"
+                    className="text-sky-300 hover:text-sky-200 text-sm font-medium"
                   >
                     View Project →
                   </a>
