@@ -47,9 +47,6 @@ export default function Home() {
                 <a href="#projects" className="text-gray-300 hover:text-white transition-colors">
                   Projects
                 </a>
-                <a href="#skills" className="text-gray-300 hover:text-white transition-colors">
-                  Skills
-                </a>
                 <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
                 </a>
@@ -62,18 +59,21 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
           <h1 className="text-5xl sm:text-7xl font-bold">
             <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-              Hi, I&apos;m Christopher Rodriguez
+              Christopher Rodriguez
             </span>
           </h1>
+          <p className="mt-2 text-lg sm:text-xl text-gray-400">
+            Greensboro, NC, USA
+          </p>
           <p className="mt-6 text-xl sm:text-2xl text-gray-300 leading-relaxed">
-            A Full-Stack Developer passionate about creating beautiful, functional, and user-friendly applications
+            An aspiring frontend developer passionate about learning web development and creating user-friendly experiences. Currently focusing on React, Next.js, and modern web technologies.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#projects"
               className="px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors flex items-center justify-center"
             >
-              View My Work
+              View My Projects
             </a>
             <a
               href="/Christopher-Rodriguez-CV.pdf"
@@ -96,9 +96,8 @@ export default function Home() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Download CV
+              Download Resume
             </a>
-
           </div>
           <div className="mt-8 sm:mt-12">
             <HeroIcon />
