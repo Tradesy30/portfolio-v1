@@ -7,13 +7,11 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { projects } from '@/app/data/projects';
 import { AnimatedSection } from '@/app/components/AnimatedSection';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function ProjectPage({ params }: Props) {
+export default function ProjectPage({
+  params
+}: {
+  params: { slug: string }
+}) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
