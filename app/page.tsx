@@ -79,7 +79,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#projects"
-                className="px-8 py-3 bg-sky-700 hover:bg-sky-800 text-white rounded-lg transition-colors flex items-center justify-center"
+                className="px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors flex items-center justify-center"
               >
                 View My Projects
               </a>
