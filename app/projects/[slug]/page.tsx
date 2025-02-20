@@ -7,12 +7,8 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
 import { projects } from '@/app/data/projects'
 import { AnimatedSection } from '@/app/components/AnimatedSection'
 
-type Props = {
-  params: { slug: string }
-}
-
-export default function ProjectPage({ params: { slug } }: Props) {
-  const project = projects.find((p) => p.slug === slug);
+export default function ProjectPage({ params }: { params: { slug: string } }) {
+  const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
     notFound();
