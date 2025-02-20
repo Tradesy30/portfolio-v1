@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "./components/smooth-scroll/SmoothScroll";
+import { ToasterProvider } from "./components/providers/ToasterProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const metadataBase = process.env.NODE_ENV === 'production'
-  ? new URL('https://portfolio-v1-delta-five.vercel.app/')
-  : new URL('http://localhost:3000');
-
 export const metadata: Metadata = {
-  metadataBase,
+  metadataBase: process.env.NODE_ENV === 'production'
+    ? new URL('https://portfolio-v1-delta-five.vercel.app/')
+    : new URL('http://localhost:3000'),
   title: "Christopher Rodriguez | Portfolio",
   description: "Full-Stack Developer passionate about creating beautiful, functional, and user-friendly applications",
   openGraph: {
@@ -46,7 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          {children}
+          <ToasterProvider />
+        </SmoothScroll>
       </body>
     </html>
   );

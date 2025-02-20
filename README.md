@@ -39,14 +39,14 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 
 ## Project Roadmap
 
-### 🎯 High Priority
+### �� High Priority
 
-- [ ] **Contact Form Integration**
-  - [ ] Integrate with FormSpree/EmailJS
-  - [ ] Implement form validation
-  - [ ] Display success/error notifications
+- [x] **Contact Form Integration**
+  - [x] Integrate with FormSpree/EmailJS
+  - [x] Implement form validation
+  - [x] Display success/error notifications
 
-### 🌟 Planned Features
+### �� Planned Features
 
 #### Blog Implementation
 
@@ -71,13 +71,6 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 - [ ] Develop detailed project pages
 - [ ] Incorporate a testimonials section
 - [ ] Integrate social media links and feeds
-
-#### Performance Improvements
-
-- [x] Optimize images for faster load times
-- [x] Implement component lazy loading
-- [x] Optimize fonts and typography
-- [x] Enhance Core Web Vitals performance
 
 ## Contact
 
