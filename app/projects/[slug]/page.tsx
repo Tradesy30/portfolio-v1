@@ -1,13 +1,14 @@
 'use client'
 
-import { notFound } from 'next/navigation'
+import { notFound, useParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
 import { projects } from '@/app/data/projects'
 import { AnimatedSection } from '@/app/components/AnimatedSection'
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage() {
+  const params = useParams();
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
