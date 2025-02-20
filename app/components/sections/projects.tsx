@@ -17,10 +17,10 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Project One',
+    title: 'portfolio',
     description: 'A brief description of your first project and its key features.',
-    image: '/image.png',
-    tags: ['React', 'Next.js', 'TypeScript'],
+    image: '/portfolio.png',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     link: 'https://portfolio-v1-delta-five.vercel.app/',
     github: 'https://github.com/Tradesy30/portfolio-v1?tab=readme-ov-file',
   },
