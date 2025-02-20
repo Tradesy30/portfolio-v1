@@ -9,7 +9,8 @@ Hi, I'm **Christopher Rodriguez**, a developer passionate about crafting modern 
 ## Demo
 
 Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/)
-![Screenshot of Portfolio](https://via.placeholder.com/800x400)
+
+[![Portfolio Preview](https://portfolio-v1-delta-five.vercel.app/opengraph-image)](https://portfolio-v1-delta-five.vercel.app/)
 
 ## Table of Contents
 
@@ -81,4 +82,4 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 ## Contact
 
 Built with ❤️ by Christopher Rodriguez.
-For inquiries or collaboration, reach out via [Chrisvalk3@gmail.com](mailto:your.email@example.com).
+For inquiries or collaboration, reach out via [Chrisvalk3@gmail.com](mailto:Chrisvalk3@gmail.com).
