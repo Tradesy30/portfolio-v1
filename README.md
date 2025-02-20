@@ -62,11 +62,11 @@ Check out the live site: [View Live](https://portfolio-v1-delta-five.vercel.app/
 - [ ] Customize color schemes for better branding
 - [x] Add smooth scroll transitions
 - [x] Implement scroll-triggered animations
-- [ ] Design loading states & skeleton screens
+- [x] Design loading states & skeleton screens
 
 #### Content Enhancement
 
-- [ ] Provide a downloadable resume
+- [x] Provide a downloadable resume
 - [ ] Visualize skills with interactive charts or graphs
 - [ ] Develop detailed project pages
 - [ ] Incorporate a testimonials section
