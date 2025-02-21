@@ -7,10 +7,10 @@ export const projects: Project[] = [
     title: 'Portfolio Website',
     description: 'A modern, responsive portfolio website showcasing my projects and skills, built with Next.js 14.',
     longDescription: 'A personal portfolio website that demonstrates modern web development practices. Features include server-side rendering, smooth animations, theme persistence, responsive design, and a component-driven architecture. The site showcases both technical proficiency and attention to user experience.',
-    coverImage: '/portfolio.png',
+    coverImage: '/images/projects/portfolio.png',
     images: [
       {
-        url: '/portfolio.png',
+        url: '/images/projects/portfolio.png',
         alt: 'Portfolio Website Homepage',
         caption: 'Modern and responsive homepage design with animated sections'
       }
@@ -75,10 +75,10 @@ export const projects: Project[] = [
     title: 'Task Management App',
     description: 'A full-stack task management application with real-time updates and collaborative features.',
     longDescription: 'A comprehensive task management solution that helps teams organize and track their projects efficiently. Features include real-time updates, collaborative workspaces, and detailed analytics.',
-    coverImage: '/portfolio.png',
+    coverImage: '/images/projects/portfolio.png',
     images: [
       {
-        url: '/task-app.png',
+        url: '/images/projects/portfolio.png',
         alt: 'Task Management App Dashboard',
         caption: 'Interactive dashboard with task analytics'
       }
